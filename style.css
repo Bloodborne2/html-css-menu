@@ -1,0 +1,130 @@
+.textoDireita{
+    max-width: 800px; /* Limita a largura do texto */
+    padding: 20px;
+    text-align: justify;
+}
+
+.containerTexto{
+    display: flex;
+    justify-content: flex;  /* Alinha os itens à direita */
+    align-items: center; /* Alinha verticalmente ao centro */
+}
+
+
+.imagemEsquerda {
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+    margin-left: 0; /* Remove qualquer margem à esquerda da imagem */
+    width: auto; /* Ajusta a largura da imagem conforme necessário */
+    height: auto; /* Ajusta a altura da imagem conforme necessário */
+    padding: 30px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    background-color: #F5D0A9;
+}
+
+nav{
+    background-color: #3E2C1C;
+    padding: 20px 0;
+
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;   
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 15px;
+    background: #F2E1C1;
+    border-radius: 5px;
+}
+
+    nav ul li a:hover{
+        background-color: #555;
+
+    }
+
+    /* Submenu */
+    nav ul .submenu{
+        display: none;
+        position: absolute;
+        background-color: #444;
+        list-style: none;
+        top: 100%;
+        left: 0;
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    nav ul li:hover .submenu{
+        display: block;
+        text-align: left;
+    }
+    nav ul .submenu li a{
+        display: block;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    /* Tela de login */
+
+    .login-container{
+        background-color: white;
+        width: 350px;
+        margin: 80px auto;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;   
+    }
+
+    .login-container h2{
+        text-align: center;
+        margin-bottom: 20px;   
+    }
+
+    .input-group{
+        margin-bottom: 15px;
+    }
+
+    .input-group label{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .input-group input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
