@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de login</title>
+    <title>Cadastro da padaria</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-</head> 
+</head>
 <body>
     <nav>
         <ul type="squre">
@@ -17,19 +17,20 @@
             <li><a href="#">Contato</a></li>
         </ul>
     </nav>
-    
+
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Cadastro de Padaria</h2>
         <form>
             <div class="input-group">
-                <label for="txtEmail">Email</label>
-                <input type="email" id="txtEmail" name="txtEmail" placeholder="Digite o seu email" required>
+                <label for="nomePadaria">Nome da Padaria</label>
+                <input type="text" id="nomePadaria" name="nomePadaria" placeholder="Digite o nome da padaria" required>
             </div>
+
             <div class="input-group">
-                <label for="txtSenha">Senha</label>
-                <input type="password" id="txtSenha" name="txtSenha" placeholder="Digite a sua senha" required>
+                <label for="txtEmail">Descrição do cardaprio</label>
+                <textarea name="descCardaprio" id="descCardaprio" rows="4" cols="40" placeholder="Descreva o cardapio"></textarea required>
             </div>
-            <button type="button" onclick="acionarBotao()">Entrar</button>
+            <button type="submit">Cadastrar</button>
         </form>
     </div>
 </body>

@@ -11,11 +11,11 @@ function acionarBotao(){
     }
     else{
         if(textEmail == "admin@gmail.com" && textSenha == '123'){
-            alert('Login de administrador');
-    }else{
-        alert('Erro'); 
-    }   
-
+        alert('Login de administrador');
+        window.location.href = 'cadastroDePadaria.html';
     }
-
+    else{
+        alert('Login inválido'); 
+    }   
+    }
 }

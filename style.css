@@ -111,11 +111,15 @@ nav ul li a{
         margin-bottom: 5px;
     }
 
-    .input-group input{
+    .input-group input, 
+    .input-group textarea {  /* Aplica o estilo tanto para input quanto textarea */
         width: 100%;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        font-family: inherit; /* Mantém a mesma fonte do restante da página */
+        font-size: 16px; /* Garante uma boa legibilidade */
+        resize: vertical; /* Permite redimensionamento apenas na vertical */
     }
 
 button{
@@ -128,3 +132,4 @@ button{
     font-size: 16px;
     cursor: pointer;
 }
+
