@@ -13,8 +13,10 @@ function acionarBotao() {
     else {
         if (textEmail == "admin@gmail.com" && textSenha == '123') {
             alert('Login de administrador');
+            window.location.href = "cadastroDePadaria.html";
+
         } else {
-            alert('Erro');
+            alert('Login errado');
         }
 
     }
@@ -70,10 +72,8 @@ function acionarBotaoCadastro() {
             return;
         }
 
-        // Se tudo estiver ok
         alert("Formulário enviado com sucesso!");
-        // Aqui você pode enviar o formulário com JavaScript se quiser:
-        // this.submit();
+    
     });
 
 }
