@@ -73,7 +73,7 @@ function acionarBotaoCadastro() {
         }
 
         alert("Formulário enviado com sucesso!");
-    
+
     });
 
 }
