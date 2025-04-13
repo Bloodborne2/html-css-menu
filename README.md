@@ -1,72 +1,106 @@
-A Página de Divulgação de Padaria é uma plataforma voltada para conectar microempreendedores do ramo de panificação com clientes em potencial. O site oferece um sistema de cadastro de usuários, onde novos usuários podem criar uma conta fornecendo informações obrigatórias, como nome, e-mail e senha. Já os usuários cadastrados podem acessar suas contas através da página de login, também com campos obrigatórios.
+# 📌 Versions / Releases
 
-Na página inicial, serão destacadas as principais funcionalidades do site, como a listagem de padarias cadastradas, avaliações de clientes e novidades do setor.
+- **v1.0.0** - (16/03/2025)
+  - Implementação de JavaScript
+  - Criação de uma nova página, acessível apenas com e-mail e senha corretos na página de login
 
-O site contará com uma página "Sobre Nós", que apresentará a origem da ideia ou empresa, trazendo informações relevantes sobre o propósito da plataforma, apenas com imagens e textos explicativos.
+---
 
-Haverá também uma página de contato, onde os usuários poderão encontrar a localização da empresa e um número de telefone para suporte ou dúvidas.
+# 📖 Página de Divulgação de Padaria
 
-Após o login, os usuários terão acesso a uma funcionalidade exclusiva: cadastro de padarias. Nessa seção, será possível inserir:
+A **Página de Divulgação de Padaria** é uma plataforma voltada para conectar microempreendedores do ramo de panificação com clientes em potencial. O site oferece funcionalidades para cadastro de usuários, listagem de padarias, avaliações de clientes e muito mais.
 
-Nome da padaria
-Diferencial da empresa (ex: produtos artesanais, ingredientes orgânicos, etc.)
-Descrição do cardápio
-Upload de imagens, incluindo fotos do estabelecimento
-Localização, onde os usuários poderão informar o endereço completo da padaria (sem integração com mapas)
-Os anúncios das padarias cadastradas serão exibidos em uma página de listagem, contendo informações resumidas, como nome e diferencial. Ao clicar em um anúncio, o usuário será redirecionado para uma página de detalhes, onde poderá visualizar todas as informações da padaria.
+## 🔑 Funcionalidades
 
-O site também oferecerá um sistema de avaliações e comentários, permitindo que clientes deixem notas e compartilhem suas experiências sobre os estabelecimentos.
+- **Cadastro de Usuários**: Os novos usuários podem criar uma conta fornecendo nome, e-mail e senha. Usuários cadastrados podem acessar suas contas através da página de login.
+  
+- **Página Inicial**: Exibição das principais funcionalidades do site, como:
+  - Listagem de padarias cadastradas
+  - Avaliações de clientes
+  - Novidades do setor de panificação
 
-Para garantir uma boa experiência e segurança, a plataforma implementará medidas de proteção de dados, preservando as informações dos usuários. Além disso, haverá um sistema de notificações para informar sobre novos comentários, avaliações ou atualizações nos anúncios cadastrados.
+- **Página "Sobre Nós"**: Informações sobre a origem da ideia da plataforma, com imagens e textos explicativos.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Cadastro de Usuários e Login
-Cadastro de Usuário (todos os campos obrigatórios):
+- **Página de Contato**: Informações de localização e número de telefone para suporte ou dúvidas.
 
-Nome (obrigatório)
-E-mail (obrigatório)
-Senha (obrigatório)
-Login (todos os campos obrigatórios):
+---
 
-E-mail (obrigatório)
-Senha (obrigatório)
-Página Inicial
-A página inicial apresentará as principais funcionalidades do site, como a listagem de padarias cadastradas, avaliações e destaques do setor.
+## 📝 Cadastro de Usuários e Login
 
-Página "Sobre Nós"
-Explicação sobre a origem da ideia/empresa
-Informações relevantes sobre a proposta da plataforma
-Apenas imagens e textos
-Página de Contato
-Localização da empresa
-Número de telefone para suporte ou dúvidas
-Cadastro de Padaria (após login)
-Após o login, os usuários terão acesso a um formulário para cadastrar suas padarias.
+### Cadastro de Usuário (Campos obrigatórios):
+- **Nome**: Obrigatório
+- **E-mail**: Obrigatório
+- **Senha**: Obrigatório
 
-Nome da Padaria (obrigatório)
-Diferencial da Empresa (ex: produtos artesanais, ingredientes orgânicos, etc.) (obrigatório)
-Descrição do Cardápio (opcional)
-Upload de Imagens:
-Foto do estabelecimento (obrigatório)
-Localização:
-Endereço completo (obrigatório, sem integração com mapas)
-Exibição dos Anúncios
-Página de Listagem:
-Exibe todas as padarias cadastradas com informações resumidas (nome e diferencial)
-Página de Detalhes:
-Exibe todas as informações completas da padaria ao clicar no anúncio
-Busca
-Funcionalidade para encontrar padarias pelo nome
-Avaliações e Comentários
-Sistema de Avaliação: Clientes podem deixar notas para as padarias (obrigatório)
-Comentários: Usuários podem compartilhar suas experiências (opcional)
-Segurança e Privacidade
-Proteção de Dados: Implementação de medidas para garantir a privacidade dos usuários
-Perguntas Anônimas: Permitir que usuários enviem dúvidas sem se identificar
-Notificações
-Atualizações: Informar usuários sobre novos comentários, avaliações ou mudanças nos anúncios cadastrados.
+### Login (Campos obrigatórios):
+- **E-mail**: Obrigatório
+- **Senha**: Obrigatório
 
+---
 
+## 🏠 Página Inicial
 
+A página inicial apresentará as principais funcionalidades do site, incluindo:
+- Listagem das padarias cadastradas
+- Avaliações de clientes
+- Destaques do setor
 
+---
+
+## ℹ️ Página "Sobre Nós"
+
+- Explicação sobre a origem da ideia/empresa
+- Informações relevantes sobre a proposta da plataforma
+- Apresentação apenas com imagens e textos
+
+---
+
+## 📞 Página de Contato
+
+- Localização da empresa
+- Número de telefone para suporte ou dúvidas
+
+---
+
+## 🍞 Cadastro de Padaria (após login)
+
+Após o login, os usuários poderão cadastrar suas padarias. O formulário de cadastro incluirá:
+
+- **Nome da Padaria**: Obrigatório
+- **Diferencial da Empresa** (Ex: Produtos artesanais, ingredientes orgânicos, etc.): Obrigatório
+- **Descrição do Cardápio**: Opcional
+- **Upload de Imagens**:
+  - Foto do estabelecimento: Obrigatório
+- **Localização**:
+  - Endereço completo (sem integração com mapas): Obrigatório
+
+---
+
+## 📋 Exibição dos Anúncios
+
+### Página de Listagem:
+- Exibe todas as padarias cadastradas com informações resumidas, como nome e diferencial.
+
+### Página de Detalhes:
+- Exibe informações completas da padaria ao clicar em um anúncio.
+
+---
+
+## 🔍 Busca
+
+Funcionalidade para buscar padarias pelo nome.
+
+---
+
+## ⭐ Avaliações e Comentários
+
+- **Sistema de Avaliação**: Clientes podem deixar notas para as padarias (Obrigatório)
+- **Comentários**: Usuários podem compartilhar suas experiências (Opcional)
+
+---
+
+## 🔐 Segurança e Privacidade
+
+- **Proteção de Dados**: Implementação de medidas para garantir a privacidade dos usuários.
+- **Perguntas Anônimas**: Permitir que usuários enviem dúvidas sem se identificar.
 
