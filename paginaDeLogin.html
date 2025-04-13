@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de login</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-</head> 
+</head>
+
 <body>
-    <nav>
-        <ul type="squre">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobreNos.html">Sobre nós</a></li>
-            <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
-            <li><a href="paginaDeLogin.html">Login</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-    
+    <div class="nav-clima-container">
+        <div id="clima-container" class="clima-container">
+            <h2>Clima em São Paulo - SP</h2>
+            <p><strong>Temperatura:</strong> <span id="temperatura"></span></p>
+            <p><strong>Vento:</strong> <span id="vento"></span></p>
+            <p><strong>Descrição:</strong> <span id="descricao"></span></p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobreNos.html">Sobre nós</a></li>
+                <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+                <li><a href="paginaDeLogin.html">Login</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="login-container">
         <h2>Login</h2>
         <form>
@@ -33,4 +44,5 @@
         </form>
     </div>
 </body>
+
 </html>
