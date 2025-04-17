@@ -2,16 +2,21 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro da padaria</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro da Padaria</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <header>
+        <h1>Guia das Padarias</h1>
+        <p>Descubra os melhores sabores da cidade</p>
+    </header>
+
     <nav>
-        <ul type="squre">
+        <ul>
             <li><a href="index.html">Início</a></li>
             <li><a href="sobreNos.html">Sobre nós</a></li>
             <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
@@ -20,20 +25,47 @@
         </ul>
     </nav>
 
+    <div class="clima-container">
+        <h2>Clima em São Paulo - SP</h2>
+        <p><strong>Temperatura:</strong> <span id="temperatura"></span></p>
+        <p><strong>Vento:</strong> <span id="vento"></span></p>
+        <p><strong>Descrição:</strong> <span id="descricao"></span></p>
+    </div>
+
     <div class="login-container">
         <h2>Cadastro de Padaria</h2>
         <form>
             <div class="input-group">
-                <label for="nomePadaria">Nome da Padaria</label>
-                <input type="text" id="nomePadaria" name="nomePadaria" placeholder="Digite o nome da padaria" required>
+                <label for="nomePadaria">Nome da Padaria <span>*</span></label>
+                <input type="text" id="nomePadaria" name="nomePadaria" placeholder="Digite o nome da padaria"
+                    required />
             </div>
 
             <div class="input-group">
-                <label for="txtEmail">Descrição do cardaprio</label>
-                <textarea name="descCardaprio" id="descCardaprio" rows="4" cols="40" placeholder="Descreva o cardapio"></textarea required>
+                <label for="diferencial">Diferencial da Empresa <span>*</span></label>
+                <input type="text" id="diferencial" name="diferencial" placeholder="Ex: Produtos artesanais" required />
             </div>
-            <button type="submit">Cadastrar</button>
+
+            <div class="input-group">
+                <label for="descCardapio">Descrição do Cardápio (opcional)</label>
+                <textarea name="descCardapio" id="descCardapio" rows="4"
+                    placeholder="Descreva o cardápio..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="foto">Foto do Estabelecimento <span>*</span></label>
+                <input type="file" id="foto" name="foto" accept="image/*" required />
+            </div>
+
+            <div class="input-group">
+                <label for="endereco">Endereço Completo <span>*</span></label>
+                <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro, cidade, estado"
+                    required />
+            </div>
+
+            <button type="submit">Cadastrar Padaria</button>
         </form>
     </div>
 </body>
+
 </html>

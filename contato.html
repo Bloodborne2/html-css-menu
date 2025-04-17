@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - Guia das Padarias</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>📞 Fale Conosco</h1>
+        <p>Estamos aqui para te ajudar com dúvidas, sugestões ou suporte!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobreNos.html">Sobre nós</a></li>
+            <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+            <li><a href="paginaDeLogin.html">Login</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="contato-container">
+        <section class="info-contato">
+            <h2>Informações da Empresa</h2>
+            <p><strong>📍 Localização:</strong> Rua das Padarias, 123 - São Paulo - SP</p>
+            <p><strong>📞 Suporte:</strong> (11) 91234-5678</p>
+            <p><strong>📧 Email:</strong> suporte@guiadaspadarias.com.br</p>
+        </section>
+
+        <section class="form-contato">
+            <h2>Formulário de Suporte</h2>
+            <form enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="email">Seu Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="mensagem">Descreva o problema</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte mais sobre o problema"
+                        required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="imagem">Anexar Imagem (opcional)</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/*">
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2025 Guia das Padarias. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

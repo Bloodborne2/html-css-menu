@@ -2,32 +2,76 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de inicio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Início - Guia das Padarias</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="nav-clima-container">
-        <div id="clima-container" class="clima-container">
-            <h2>Clima em São Paulo - SP</h2>
-            <p><strong>Temperatura:</strong> <span id="temperatura"></span></p>
-            <p><strong>Vento:</strong> <span id="vento"></span></p>
-            <p><strong>Descrição:</strong> <span id="descricao"></span></p>
-        </div>
+    <header>
+        <h1>Guia das Padarias</h1>
+        <p>Descubra os melhores sabores da cidade</p>
+    </header>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobreNos.html">Sobre nós</a></li>
-                <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
-                <li><a href="paginaDeLogin.html">Login</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobreNos.html">Sobre nós</a></li>
+            <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+            <li><a href="paginaDeLogin.html">Login</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="clima-container">
+        <h2>☀️ Clima em São Paulo - SP</h2>
+        <p><strong>Temperatura:</strong> <span id="temperatura"></span></p>
+        <p><strong>Vento:</strong> <span id="vento"></span></p>
+        <p><strong>Descrição:</strong> <span id="descricao"></span></p>
     </div>
+
+    <main class="conteudo-inicio">
+        <section class="destaque">
+            <h2>🍞 Encontre a padaria perfeita perto de você!</h2>
+            <p>O <strong>Guia das Padarias</strong> conecta você às melhores padarias da cidade, com avaliações reais,
+                cardápios artesanais e muitas delícias!</p>
+        </section>
+
+        <section class="beneficios">
+            <h2>✨ Por que usar o Guia das Padarias?</h2>
+            <ul>
+                <li>✅ Descubra padarias com produtos artesanais e orgânicos</li>
+                <li>✅ Veja fotos reais dos estabelecimentos</li>
+                <li>✅ Filtre por localização e diferenciais</li>
+                <li>✅ Cadastre sua própria padaria no nosso guia</li>
+            </ul>
+        </section>
+
+        <section class="depoimentos">
+            <h2>💬 O que estão dizendo?</h2>
+            <blockquote>
+                “Encontrei a melhor padaria artesanal da cidade graças ao site. Agora sou cliente fiel!”
+                <footer>— Amanda S., São Paulo</footer>
+            </blockquote>
+            <blockquote>
+                “Como dono de padaria, me inscrevi e ganhei novos clientes toda semana. Recomendo muito!”
+                <footer>— Carlos B., proprietário</footer>
+            </blockquote>
+        </section>
+
+        <section class="chamada-acao">
+            <h2>📍 Comece agora mesmo</h2>
+            <p>Faça parte da nossa comunidade! Cadastre sua padaria ou encontre a próxima que vai conquistar seu coração
+                (e paladar).</p>
+            <a href="paginaDeCadastro.html" class="botao-destaque">Cadastrar Padaria</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Guia das Padarias • Todos os direitos reservados</p>
+    </footer>
 </body>
 
 </html>
