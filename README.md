@@ -1,5 +1,11 @@
 # 📌 Versions / Releases
 
+## adicionar politica de COOCKIES
+
+
+
+
+
 ### **v1.0.2** - (17/04/2025)
 - 🎨 Melhore geral no CSS do site
 - 🎨 criação de novo html da pagina de contato
