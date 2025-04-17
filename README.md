@@ -4,8 +4,8 @@
 - 🎨 Melhore geral no CSS do site
 - 🎨 criação de novo html da pagina de contato
 - 🎨criação de footer e header
-
-
+- 
+---
 - **v1.0.0** - (13/04/2025)
   - 🔄 Integração com **API de Clima (OpenWeatherMap)** para exibir dados em tempo real no site
   - 🎨 Estilização e centralização do container de clima na interface
