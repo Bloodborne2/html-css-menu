@@ -1,11 +1,17 @@
 # 📌 Versions / Releases
 
-### **v1.0.1** - (13/04/2025)
-- 🔄 Integração com **API de Clima (OpenWeatherMap)** para exibir dados em tempo real no site
-- 🎨 Estilização e centralização do container de clima na interface
-- ✅ Validação aprimorada no formulário de cadastro
-- 🗺️ Integração com **API ViaCEP** para preenchimento automático de endereço
-- 🧱 Ajustes visuais e melhorias na responsividade da interface
+### **v1.0.2** - (17/04/2025)
+- 🎨 Melhore geral no CSS do site
+- 🎨 criação de novo html da pagina de contato
+- 🎨criação de footer e header
+
+
+- **v1.0.0** - (13/04/2025)
+  - 🔄 Integração com **API de Clima (OpenWeatherMap)** para exibir dados em tempo real no site
+  - 🎨 Estilização e centralização do container de clima na interface
+  - ✅ Validação aprimorada no formulário de cadastro
+  - 🗺️ Integração com **API ViaCEP** para preenchimento automático de endereço
+  - 🧱 Ajustes visuais e melhorias na responsividade da interface
 
 ---
 - **v1.0.0** - (16/03/2025)
