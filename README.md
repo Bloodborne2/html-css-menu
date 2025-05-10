@@ -9,11 +9,11 @@
 - 🎉 Exibição do banner de cookies apenas uma vez, utilizando localStorage para persistência entre páginas e sessões
 - 🔄 Melhoria na integração entre o banner de cookies e o layout do site
 ---
-- **v1.0.2** - (17/04/2025)
-- 🎨 Melhore geral no CSS do site
-- 🎨 criação de novo html da pagina de contato
-- 🎨criação de footer e header
-- 
+  - **v1.0.2** - (17/04/2025)
+  - 🎨 Melhore geral no CSS do site
+  - 🎨 criação de novo html da pagina de contato
+  - 🎨criação de footer e header
+    
 ---
 - **v1.0.0** - (13/04/2025)
   - 🔄 Integração com **API de Clima (OpenWeatherMap)** para exibir dados em tempo real no site
