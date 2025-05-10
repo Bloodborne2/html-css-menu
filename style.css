@@ -423,3 +423,49 @@ input[type="text"] {
 input[type="text"]:focus {
     border-color: #d77f52;
 }
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+.cookie-banner p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.cookie-banner a {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+/* Centralizando o conteúdo dos botões */
+.cookie-banner div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;  /* Adiciona um espaço entre os botões */
+}
+
+.cookie-banner button {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-banner button:hover {
+    background-color: #45a049;
+}

@@ -168,3 +168,96 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// FUNÇÃO DA POLITICA DE COOKIES
+document.addEventListener("DOMContentLoaded", function () {
+  // Verificar se o usuário já aceitou ou recusou os cookies
+  const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
+  if (cookiesAccepted === null) {
+    // Se a decisão não foi tomada ainda, inserir o banner dinamicamente
+    insertCookieBanner();
+  } else {
+    // Caso o banner tenha sido aceito ou recusado, não mostrar novamente
+    return;
+  }
+
+  // Inserir o banner de cookies no DOM
+  function insertCookieBanner() {
+    const banner = document.createElement("div");
+    banner.id = "cookie-banner";
+    banner.className = "cookie-banner";
+
+    banner.innerHTML = `
+          <p>Utilizamos cookies para melhorar a sua experiência no nosso site. Ao continuar navegando, você concorda com nossa <a href="/politica-de-cookies">Política de Cookies</a>.</p>
+          <div>
+              <button id="accept-cookies">Aceitar</button>
+          </div>
+          <div>
+          <button id="decline-cookies">Recusar</button>
+          </div>
+      `;
+
+    document.body.appendChild(banner);
+
+    // Adicionar o estilo CSS do banner
+    const style = document.createElement("style");
+    style.innerHTML = `
+          .cookie-banner {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: rgba(0, 0, 0, 0.8);
+              color: #fff;
+              padding: 15px;
+              text-align: center;
+              font-family: Arial, sans-serif;
+              z-index: 1000;
+          }
+          .cookie-banner p {
+              margin: 0;
+              padding: 0;
+              font-size: 16px;
+          }
+          .cookie-banner a {
+              color: #ffd700;
+              text-decoration: underline;
+          }
+          .cookie-banner div {
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+          }
+          .cookie-banner button {
+              padding: 8px 15px;
+              font-size: 16px;
+              cursor: pointer;
+              border: none;
+              border-radius: 5px;
+              background-color: #4CAF50;
+              color: white;
+              transition: background-color 0.3s ease;
+          }
+          .cookie-banner button:hover {
+              background-color: #45a049;
+          }
+      `;
+    document.head.appendChild(style);
+
+    // Quando o usuário clica em "Aceitar"
+    document
+      .getElementById("accept-cookies")
+      .addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+      });
+
+    // Quando o usuário clica em "Recusar"
+    document
+      .getElementById("decline-cookies")
+      .addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "false");
+        banner.style.display = "none";
+      });
+  }
+});
