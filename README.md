@@ -1,12 +1,15 @@
 # 📌 Versions / Releases
 
-## adicionar politica de COOCKIES
-
-
-
-
-
-### **v1.0.2** - (17/04/2025)
+### v1.0.3 - (10/05/2025)
+- 🎨 Criação de novos HTMLs pagina de contato, listagem e detalhes
+- 🎨 Criação de header e footer para todas as páginas
+- 🛠️ Ajustes no JavaScript para exibição dinâmica do banner de cookies em todas as páginas
+- 🛠️ Pagina de listagem de padaria com js dinamico
+- 🛠️ Utulização de localStorage para no cadastro para então ser utulizado no login  
+- 🎉 Exibição do banner de cookies apenas uma vez, utilizando localStorage para persistência entre páginas e sessões
+- 🔄 Melhoria na integração entre o banner de cookies e o layout do site
+---
+- **v1.0.2** - (17/04/2025)
 - 🎨 Melhore geral no CSS do site
 - 🎨 criação de novo html da pagina de contato
 - 🎨criação de footer e header
