@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Início - Guia das Padarias</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="https://img.freepik.com/vetores-premium/logotipo-do-design-de-paes-e-bolos-de-padaria_545399-712.jpg?semt=ais_hybrid&w=740"
+        alt="Logo Guia das Padarias"
+        class="logo-header"
+      />
+      <h1>Guia das Padarias</h1>
+      <p>Descubra os melhores sabores da cidade</p>
+    </header>
+
+    <nav>
+      <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="listagem.html">Buscar padarias</a></li>
+          <li><a href="paginaDeLogin.html">Login</a></li>
+          <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+          <li><a href="sobreNos.html">Sobre nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </ul>
+  </nav>
+
+    <header>
+      <h1>🥐 Lista de Padarias</h1>
+      <input
+        type="text"
+        id="buscaNome"
+        placeholder="Buscar padaria pelo nome..."
+      />
+      <button onclick="buscar()">🔍 Buscar</button>
+    </header>
+
+    <main>
+      <div id="resultadosBusca"></div>
+      <div id="paginacao"></div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Guia das Padarias • Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+      const PADARIAS_POR_PAGINA = 4;
+      let paginaAtual = 1;
+      let padariasFiltradas = [];
+
+      // Padarias pré-cadastradas
+      const padariasIniciais = [
+        {
+          id: 1,
+          nome: "Padaria do Pão Quentinho",
+          diferencial: "Pão na lenha",
+          descricao: "",
+        },
+        {
+          id: 2,
+          nome: "Delícias da Esquina",
+          diferencial: "Bolos caseiros",
+          descricao: "",
+        },
+        {
+          id: 3,
+          nome: "Panificadora Aurora",
+          diferencial: "Pães veganos",
+          descricao: "",
+        },
+        {
+          id: 4,
+          nome: "Sabor & Tradição",
+          diferencial: "Receitas centenárias",
+          descricao: "",
+        },
+        {
+          id: 5,
+          nome: "Pão Nosso",
+          diferencial: "Focaccia artesanal",
+          descricao: "",
+        },
+        {
+          id: 6,
+          nome: "Doce Fermento",
+          diferencial: "Croissants franceses",
+          descricao: "",
+        },
+      ];
+
+      // Verifica e carrega padarias pré-cadastradas
+      function carregarPadariasIniciais() {
+        const existentes = JSON.parse(localStorage.getItem("padarias"));
+        if (!existentes || existentes.length === 0) {
+          localStorage.setItem("padarias", JSON.stringify(padariasIniciais));
+        }
+      }
+
+      function buscar() {
+        const termo = document
+          .getElementById("buscaNome")
+          .value.trim()
+          .toLowerCase();
+        const padarias = JSON.parse(localStorage.getItem("padarias")) || [];
+
+        if (termo === "") {
+          padariasFiltradas = padarias;
+        } else {
+          padariasFiltradas = padarias.filter((p) =>
+            p.nome.toLowerCase().includes(termo)
+          );
+        }
+
+        paginaAtual = 1;
+        exibirPagina();
+      }
+
+      function exibirPagina() {
+        const inicio = (paginaAtual - 1) * PADARIAS_POR_PAGINA;
+        const fim = inicio + PADARIAS_POR_PAGINA;
+        const pagina = padariasFiltradas.slice(inicio, fim);
+
+        const div = document.getElementById("resultadosBusca");
+        div.innerHTML = "";
+
+        if (pagina.length === 0) {
+          div.innerHTML = "<p>Nenhuma padaria encontrada.</p>";
+          return;
+        }
+
+        pagina.forEach((p) => {
+          const card = document.createElement("div");
+          card.className = "card-padaria";
+          card.innerHTML = `
+                    <h2>${p.nome}</h2>
+                    <p><strong>Diferencial:</strong> ${p.diferencial}</p>
+                    <button onclick="verDetalhes('${p.id}')">Ver Detalhes</button>
+                `;
+          div.appendChild(card);
+        });
+
+        atualizarPaginacao();
+      }
+
+      function atualizarPaginacao() {
+        const total = Math.ceil(padariasFiltradas.length / PADARIAS_POR_PAGINA);
+        const div = document.getElementById("paginacao");
+        div.innerHTML = "";
+
+        if (total <= 1) return;
+
+        for (let i = 1; i <= total; i++) {
+          const btn = document.createElement("button");
+          btn.textContent = i;
+          btn.onclick = () => {
+            paginaAtual = i;
+            exibirPagina();
+          };
+          if (i === paginaAtual) {
+            btn.style.fontWeight = "bold";
+          }
+          div.appendChild(btn);
+        }
+      }
+
+      function verDetalhes(id) {
+        localStorage.setItem("padariaSelecionada", id);
+        window.location.href = "detalhes.html";
+      }
+
+      window.onload = () => {
+        carregarPadariasIniciais();
+        buscar(); // mostra todas inicialmente
+      };
+    </script>
+  </body>
+</html>

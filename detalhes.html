@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes da Padaria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://img.freepik.com/vetores-premium/logotipo-do-design-de-paes-e-bolos-de-padaria_545399-712.jpg?semt=ais_hybrid&w=740"
+        alt="Logo Guia das Padarias"
+        class="logo-header"
+      />
+      <h1>Guia das Padarias</h1>
+      <p>Descubra os melhores sabores da cidade</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="listagem.html">Buscar padarias</a></li>
+        <li><a href="paginaDeLogin.html">Login</a></li>
+        <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+        <li><a href="sobreNos.html">Sobre nós</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Detalhes da Padaria</h1>
+    </header>
+
+    <main>
+      <div id="infoPadaria"></div>
+
+      <section id="comentariosSection" style="margin-top: 30px">
+        <h2>Comentários e Avaliações</h2>
+        <div id="comentariosList"></div>
+
+        <div id="formComentario" style="margin-top: 20px"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Guia das Padarias</p>
+    </footer>
+
+    <script>
+      const padariaId = localStorage.getItem("padariaSelecionada");
+      const padarias = JSON.parse(localStorage.getItem("padarias")) || [];
+      const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado")); // deve ser salvo no login
+
+      const padaria = padarias.find((p) => String(p.id) === String(padariaId));
+      const infoDiv = document.getElementById("infoPadaria");
+
+      if (!padaria) {
+        infoDiv.innerHTML = "<p>Padaria não encontrada.</p>";
+      } else {
+        infoDiv.innerHTML = `
+        <h2>${padaria.nome}</h2>
+        <p><strong>Diferencial:</strong> ${padaria.diferencial}</p>
+        <p><strong>Endereço:</strong> ${padaria.endereco || "Não informado"}</p>
+      `;
+      }
+
+      // Comentários e Avaliações
+      const comentariosList = document.getElementById("comentariosList");
+      const todosComentarios =
+        JSON.parse(localStorage.getItem("comentarios")) || [];
+      const comentariosDaPadaria = todosComentarios.filter(
+        (c) => c.padariaId === padariaId
+      );
+
+      function exibirComentarios() {
+        comentariosList.innerHTML = "";
+        if (comentariosDaPadaria.length === 0) {
+          comentariosList.innerHTML = "<p>Nenhum comentário ainda.</p>";
+          return;
+        }
+
+        comentariosDaPadaria.forEach((c) => {
+          const div = document.createElement("div");
+          div.innerHTML = `
+          <p><strong>${c.usuario}:</strong> Nota ${c.nota}/5</p>
+          ${c.comentario ? `<p>${c.comentario}</p>` : ""}
+          <hr/>
+        `;
+          comentariosList.appendChild(div);
+        });
+      }
+
+      exibirComentarios();
+
+      // Formulário se usuário estiver logado
+      const formDiv = document.getElementById("formComentario");
+
+      if (usuarioLogado) {
+        formDiv.innerHTML = `
+        <h3>Deixe sua avaliação:</h3>
+        <label for="nota">Nota (1 a 5):</label>
+        <input type="number" id="nota" min="1" max="5" required><br><br>
+
+        <label for="comentario">Comentário (opcional):</label><br>
+        <textarea id="comentario" rows="4" cols="40"></textarea><br><br>
+
+        <button onclick="salvarComentario()">Enviar Avaliação</button>
+      `;
+      } else {
+        formDiv.innerHTML = `<p><a href="paginaDeLogin.html">Faça login</a> para avaliar esta padaria.</p>`;
+      }
+
+      function salvarComentario() {
+        const nota = parseInt(document.getElementById("nota").value);
+        const comentario = document.getElementById("comentario").value.trim();
+
+        if (!nota || nota < 1 || nota > 5) {
+          alert("Nota inválida! Use um valor entre 1 e 5.");
+          return;
+        }
+
+        const novoComentario = {
+          padariaId,
+          usuario: usuarioLogado.nome || usuarioLogado.email,
+          nota,
+          comentario,
+        };
+
+        todosComentarios.push(novoComentario);
+        localStorage.setItem("comentarios", JSON.stringify(todosComentarios));
+
+        alert("Avaliação enviada!");
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

@@ -265,3 +265,161 @@ footer {
     color: white;
     margin-top: 40px;
 }
+
+
+
+/*ESTILIZAÇÃO DAS IMAGENS DA PAGINA DE INICIO*/
+.logo-header {
+    width: 150px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.foto-depoente {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.depoimento {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+blockquote {
+    font-style: italic;
+    margin-left: 10px;
+}
+
+/* Estilo para a imagem de destaque da padaria */
+.imagem-destaque {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para dar destaque */
+}
+
+/* Estilo para a imagem dos benefícios */
+.imagem-beneficios {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: block; /* Para garantir que a imagem seja centralizada */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para as imagens dos depoimentos */
+.foto-depoente {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    margin-right: 15px;
+    border: 2px solid #ddd; /* Borda sutil */
+}
+
+/* Estilo para os depoimentos */
+.depoimento {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 10px;
+    max-width: 600px;
+}
+
+
+
+/* ESTILIZAÇÃO PAGINA DE LISTAGEM */
+/* Card de padaria */
+.card-padaria {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.2s;
+}
+
+.card-padaria:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-padaria h2 {
+    margin: 0 0 0.5rem;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.card-padaria p {
+    margin: 0.2rem 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.card-padaria .ver-detalhes {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #3e2b1c;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.card-padaria .ver-detalhes:hover {
+    background-color: #2a1d13;
+}
+
+/* Paginação */
+#paginacao {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 0.5rem;
+}
+
+#paginacao button {
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #f2f2f2;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+#paginacao button:hover {
+    background-color: #e0e0e0;
+}
+
+#paginacao button[style*="font-weight: bold"] {
+    background-color: #f4d58d;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"] {
+    padding: 0.7rem 1rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #d77f52;
+}
