@@ -5,14 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes da Padaria</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: #fdf8f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        max-width: 960px;
+        margin: auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .detalhes-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: flex-start;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .imagem-padaria {
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .info-texto {
+        flex: 1;
+        min-width: 260px;
+      }
+
+      .info-texto h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+        color: #8b4513;
+      }
+
+      .info-texto p {
+        margin: 8px 0;
+        line-height: 1.4;
+      }
+
+      #cardapio {
+        background-color: #fffaf0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      #cardapio h3 {
+        margin-top: 0;
+        color: #a0522d;
+      }
+
+      #cardapio p {
+        margin: 5px 0;
+      }
+
+      #formComentario {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      #formComentario h3 {
+        margin: 0 0 8px 0;
+        color: #8b4513;
+        font-size: 20px;
+      }
+
+      #formComentario label {
+        font-weight: bold;
+        color: #5a3e1b;
+      }
+
+      #formComentario input[type="number"],
+      #formComentario textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        resize: vertical;
+      }
+
+      #formComentario input[type="number"] {
+        max-width: 120px;
+      }
+
+      #formComentario textarea {
+        min-height: 80px;
+      }
+
+      #formComentario button {
+        align-self: flex-start;
+        background-color: #3e2c1c;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #formComentario button:hover {
+        background-color: #a0522d;
+      }
+
+      .star-rating {
+        color: #f0c420;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+    </style>
   </head>
+
   <body>
     <header>
-      <img
-        src="https://img.freepik.com/vetores-premium/logotipo-do-design-de-paes-e-bolos-de-padaria_545399-712.jpg?semt=ais_hybrid&w=740"
-        alt="Logo Guia das Padarias"
-        class="logo-header"
-      />
       <h1>Guia das Padarias</h1>
       <p>Descubra os melhores sabores da cidade</p>
     </header>
@@ -23,54 +147,94 @@
         <li><a href="listagem.html">Buscar padarias</a></li>
         <li><a href="paginaDeLogin.html">Login</a></li>
         <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+        <li><a href="cadastroDePadaria.html">Cadastrar Padaria</a></li>
         <li><a href="sobreNos.html">Sobre nós</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
-    <header>
-      <h1>Detalhes da Padaria</h1>
-    </header>
 
     <main>
-      <div id="infoPadaria"></div>
+      <div id="infoPadaria" class="detalhes-container"></div>
 
-      <section id="comentariosSection" style="margin-top: 30px">
+      <section id="cardapio">
+        <h3>Cardápio</h3>
+        <p id="textoCardapio"></p>
+      </section>
+
+      <section id="comentariosSection">
         <h2>Comentários e Avaliações</h2>
         <div id="comentariosList"></div>
-
-        <div id="formComentario" style="margin-top: 20px"></div>
+        <div id="formComentario"></div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 Guia das Padarias</p>
+      <p>&copy; 2025 Guia das Padarias. Todos os direitos reservados.</p>
     </footer>
 
     <script>
       const padariaId = localStorage.getItem("padariaSelecionada");
       const padarias = JSON.parse(localStorage.getItem("padarias")) || [];
-      const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado")); // deve ser salvo no login
+      const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+      const todosComentarios =
+        JSON.parse(localStorage.getItem("comentarios")) || [];
 
       const padaria = padarias.find((p) => String(p.id) === String(padariaId));
       const infoDiv = document.getElementById("infoPadaria");
+      const cardapioTexto = document.getElementById("textoCardapio");
+      const comentariosList = document.getElementById("comentariosList");
+      const formDiv = document.getElementById("formComentario");
+
+      const comentariosDaPadaria = todosComentarios.filter(
+        (c) => String(c.padariaId) === String(padariaId)
+      );
 
       if (!padaria) {
         infoDiv.innerHTML = "<p>Padaria não encontrada.</p>";
       } else {
         infoDiv.innerHTML = `
-        <h2>${padaria.nome}</h2>
-        <p><strong>Diferencial:</strong> ${padaria.diferencial}</p>
-        <p><strong>Endereço:</strong> ${padaria.endereco || "Não informado"}</p>
-      `;
-      }
+          <img src="${
+            padaria.imagem ||
+            "https://via.placeholder.com/300x200?text=Sem+imagem"
+          }" alt="Imagem da padaria" class="imagem-padaria" />
+          <div class="info-texto">
+            <h2>${padaria.nome}</h2>
+            <div id="notaMedia"></div>
+            <p><strong>Diferencial:</strong> ${padaria.diferencial}</p>
+            <p><strong>Endereço:</strong> ${padaria.endereco}</p>
+            <p><strong>Funcionamento:</strong> ${padaria.horario}</p>
+            <p><strong>Telefone:</strong> ${padaria.telefone}</p>
+            <p><strong>Site:</strong> ${
+              padaria.site
+                ? `<a href="${padaria.site}" target="_blank">${padaria.site}</a>`
+                : "Não informado"
+            }</p>
+          </div>
+        `;
 
-      // Comentários e Avaliações
-      const comentariosList = document.getElementById("comentariosList");
-      const todosComentarios =
-        JSON.parse(localStorage.getItem("comentarios")) || [];
-      const comentariosDaPadaria = todosComentarios.filter(
-        (c) => c.padariaId === padariaId
-      );
+        cardapioTexto.textContent = padaria.cardapio;
+
+        // Exibir nota média
+        const mediaContainer = document.getElementById("notaMedia");
+
+        if (comentariosDaPadaria.length > 0) {
+          const somaNotas = comentariosDaPadaria.reduce(
+            (soma, c) => soma + c.nota,
+            0
+          );
+          const media = (somaNotas / comentariosDaPadaria.length).toFixed(1);
+          const estrelas =
+            "★".repeat(Math.round(media)) + "☆".repeat(5 - Math.round(media));
+
+          mediaContainer.innerHTML = `
+            <p><strong>Nota média dos usuários:</strong> 
+              <span class="star-rating">${estrelas}</span> (${media}/5)
+            </p>
+          `;
+        } else {
+          mediaContainer.innerHTML = `<p><strong>Nota média dos usuários:</strong> Ainda sem avaliações.</p>`;
+        }
+      }
 
       function exibirComentarios() {
         comentariosList.innerHTML = "";
@@ -82,30 +246,30 @@
         comentariosDaPadaria.forEach((c) => {
           const div = document.createElement("div");
           div.innerHTML = `
-          <p><strong>${c.usuario}:</strong> Nota ${c.nota}/5</p>
-          ${c.comentario ? `<p>${c.comentario}</p>` : ""}
-          <hr/>
-        `;
+            <p><strong>${
+              c.usuario
+            }:</strong> <span class="star-rating">${"★".repeat(
+            c.nota
+          )}${"☆".repeat(5 - c.nota)}</span></p>
+            ${c.comentario ? `<p>${c.comentario}</p>` : ""}
+            <hr/>
+          `;
           comentariosList.appendChild(div);
         });
       }
 
       exibirComentarios();
 
-      // Formulário se usuário estiver logado
-      const formDiv = document.getElementById("formComentario");
-
+      // Formulário de avaliação
       if (usuarioLogado) {
         formDiv.innerHTML = `
-        <h3>Deixe sua avaliação:</h3>
-        <label for="nota">Nota (1 a 5):</label>
-        <input type="number" id="nota" min="1" max="5" required><br><br>
-
-        <label for="comentario">Comentário (opcional):</label><br>
-        <textarea id="comentario" rows="4" cols="40"></textarea><br><br>
-
-        <button onclick="salvarComentario()">Enviar Avaliação</button>
-      `;
+          <h3>Deixe sua avaliação:</h3>
+          <label for="nota">Nota (1 a 5):</label>
+          <input type="number" id="nota" min="1" max="5" required />
+          <label for="comentario">Comentário (opcional):</label>
+          <textarea id="comentario" rows="4"></textarea>
+          <button onclick="salvarComentario()">Enviar Avaliação</button>
+        `;
       } else {
         formDiv.innerHTML = `<p><a href="paginaDeLogin.html">Faça login</a> para avaliar esta padaria.</p>`;
       }

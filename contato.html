@@ -1,69 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato - Guia das Padarias</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></SCRipt>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .erro {
+        color: red;
+        font-size: 14px;
+        margin-top: 4px;
+        display: none;
+      }
 
-</head>
+      .input-group.invalid input,
+      .input-group.invalid textarea {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>📞 Fale Conosco</h1>
-        <p>Estamos aqui para te ajudar com dúvidas, sugestões ou suporte!</p>
+      <h1>📞 Fale Conosco</h1>
+      <p>Estamos aqui para te ajudar com dúvidas, sugestões ou suporte!</p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="listagem.html">Buscar padarias</a></li>
-            <li><a href="paginaDeLogin.html">Login</a></li>
-            <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
-            <li><a href="sobreNos.html">Sobre nós</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="listagem.html">Buscar padarias</a></li>
+        <li><a href="paginaDeLogin.html">Login</a></li>
+        <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+        <li><a href="cadastroDePadaria.html">Cadastrar Padaria</a></li>
+        <li><a href="sobreNos.html">Sobre nós</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
     </nav>
 
     <main class="contato-container">
-        <section class="info-contato">
-            <h2>Informações da Empresa</h2>
-            <p><strong>📍 Localização:</strong> Rua das Padarias, 123 - São Paulo - SP</p>
-            <p><strong>📞 Suporte:</strong> (11) 91234-5678</p>
-            <p><strong>📧 Email:</strong> suporte@guiadaspadarias.com.br</p>
-        </section>
+      <section class="info-contato">
+        <h2>Informações da Empresa</h2>
+        <p>
+          <strong>📍 Localização:</strong> Rua das Padarias, 123 - São Paulo -
+          SP
+        </p>
+        <p><strong>📞 Suporte:</strong> (11) 91234-5678</p>
+        <p><strong>📧 Email:</strong> suporte@guiadaspadarias.com.br</p>
+      </section>
 
-        <section class="form-contato">
-            <h2>Formulário de Suporte</h2>
-            <form enctype="multipart/form-data">
-                <div class="input-group">
-                    <label for="email">Seu Email</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-                </div>
+      <section class="form-contato">
+        <h2>Formulário de Suporte</h2>
+        <form id="formContato" enctype="multipart/form-data" novalidate>
+          <div class="input-group">
+            <label for="email">Seu Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu email"
+              required
+            />
+            <small id="erroEmail" class="erro">Digite um email válido.</small>
+          </div>
 
-                <div class="input-group">
-                    <label for="mensagem">Descreva o problema</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte mais sobre o problema"
-                        required></textarea>
-                </div>
+          <div class="input-group">
+            <label for="mensagem">Descreva o problema</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              placeholder="Conte mais sobre o problema"
+              required
+            ></textarea>
+            <small id="erroMensagem" class="erro"
+              >A mensagem não pode estar vazia.</small
+            >
+          </div>
 
-                <div class="input-group">
-                    <label for="imagem">Anexar Imagem (opcional)</label>
-                    <input type="file" id="imagem" name="imagem" accept="image/*">
-                </div>
+          <div class="input-group">
+            <label for="imagem">Anexar Imagem (opcional)</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" />
+          </div>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
     </main>
 
-
     <footer>
-        <p>&copy; 2025 Guia das Padarias. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Guia das Padarias. Todos os direitos reservados.</p>
     </footer>
-</body>
 
+    <script>
+      const form = document.getElementById("formContato");
+      const emailInput = document.getElementById("email");
+      const mensagemInput = document.getElementById("mensagem");
+
+      const erroEmail = document.getElementById("erroEmail");
+      const erroMensagem = document.getElementById("erroMensagem");
+
+      form.addEventListener("submit", function (e) {
+        let valido = true;
+
+        // Validação do email
+        const email = emailInput.value.trim();
+        const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!email || !emailValido) {
+          erroEmail.style.display = "block";
+          emailInput.parentElement.classList.add("invalid");
+          valido = false;
+        } else {
+          erroEmail.style.display = "none";
+          emailInput.parentElement.classList.remove("invalid");
+        }
+
+        // Validação da mensagem
+        const mensagem = mensagemInput.value.trim();
+        if (!mensagem) {
+          erroMensagem.style.display = "block";
+          mensagemInput.parentElement.classList.add("invalid");
+          valido = false;
+        } else {
+          erroMensagem.style.display = "none";
+          mensagemInput.parentElement.classList.remove("invalid");
+        }
+
+        // Impede envio se inválido
+        if (!valido) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
 </html>

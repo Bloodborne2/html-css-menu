@@ -1,471 +1,532 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff8f1;
-    margin: 0;
-    padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8f1;
+  margin: 0;
+  padding: 0;
 }
 
 /* MENU DE NAVEGAÇÃO */
 header {
-    background-color: #3E2C1C;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
+  background-color: #3e2c1c;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 nav {
-    background-color: #6b4e35;
-    padding: 10px 0;
+  background-color: #6b4e35;
+  padding: 10px 0;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    background-color: #f2e1c1;
-    border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #f2e1c1;
+  border-radius: 8px;
 }
 
 nav a:hover {
-    background-color: #d1b894;
+  background-color: #d1b894;
 }
-
 
 /* CLIMA*/
 .clima-container {
-    background-color: #f5e4c3;
-    padding: 15px;
-    margin: 20px auto;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+  background-color: #f5e4c3;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .containerTexto {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .imagemEsquerda {
-    max-width: 500px;
-    width: 100%;
-    border-radius: 12px;
-    margin: 20px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px;
 }
 
 .textoDireita {
-    flex: 1;
-    padding: 20px;
-    font-size: 18px;
-    text-align: justify;
+  flex: 1;
+  padding: 20px;
+  font-size: 18px;
+  text-align: justify;
 }
 
 footer {
-    background-color: #3E2C1C;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+  background-color: #3e2c1c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }
 
 .missao-visao-valores {
-    background-color: #fff3e6;
-    padding: 40px;
-    margin: 40px auto;
-    max-width: 1000px;
-    border-radius: 12px;
-    text-align: left;
+  background-color: #fff3e6;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  text-align: left;
 }
 
 .missao-visao-valores h3 {
-    color: #3E2C1C;
-    margin-bottom: 10px;
+  color: #3e2c1c;
+  margin-bottom: 10px;
 }
-
 
 /* Formulário */
 .login-container {
-    max-width: 400px;
-    background-color: #fff;
-    padding: 40px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .login-container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #3E2C1C;
-    font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #3e2c1c;
+  font-size: 28px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 6px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .input-group label span {
-    color: red;
+  color: red;
 }
 
 .input-group input,
 .input-group textarea {
-    width: 70%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #d1b894;
-    background-color: #fefaf6;
-    transition: border-color 0.3s ease;
+  width: 70%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #d1b894;
+  background-color: #fefaf6;
+  transition: border-color 0.3s ease;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #a57a4c;
-    outline: none;
+  border-color: #a57a4c;
+  outline: none;
 }
 
 button[type="submit"] {
-    background-color: #3E2C1C;
-    color: white;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #3e2c1c;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #5b3e2c;
+  background-color: #5b3e2c;
 }
 
 /* Botão */
 button {
-    width: 50%;
-    background-color: #3E2C1C;
-    color: white;
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 10px auto 0 auto;
-
+  width: 50%;
+  background-color: #3e2c1c;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 10px auto 0 auto;
 }
 
 button:hover {
-    background-color: #5b3e2c;
+  background-color: #5b3e2c;
 }
 
-
 .contato-container {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #fff8f0;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .info-contato,
 .form-contato {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 /*ESTILIZAÇÃO DA PAGINA DE INICIO*/
 .conteudo-inicio {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
 }
 
 .conteudo-inicio section {
-    margin-bottom: 40px;
-    background: #fff8f0;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  background: #fff8f0;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .destaque h2 {
-    font-size: 26px;
-    color: #3E2C1C;
+  font-size: 26px;
+  color: #3e2c1c;
 }
 
 .beneficios ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .beneficios li::before {
-    content: "🍞";
-    margin-right: 8px;
+  content: "🍞";
+  margin-right: 8px;
 }
 
 .depoimentos blockquote {
-    border-left: 4px solid #c59d5f;
-    padding-left: 15px;
-    margin-bottom: 20px;
-    font-style: italic;
+  border-left: 4px solid #c59d5f;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
 .chamada-acao {
-    text-align: center;
+  text-align: center;
 }
 
 .botao-destaque {
-    background-color: #3E2C1C;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: #3e2c1c;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .botao-destaque:hover {
-    background-color: #5c402a;
+  background-color: #5c402a;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #3E2C1C;
-    color: white;
-    margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  background-color: #3e2c1c;
+  color: white;
+  margin-top: 40px;
 }
-
-
 
 /*ESTILIZAÇÃO DAS IMAGENS DA PAGINA DE INICIO*/
 .logo-header {
-    width: 150px; /* Ajuste conforme necessário */
-    height: auto;
-    margin-bottom: 20px;
+  width: 150px; /* Ajuste conforme necessário */
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .foto-depoente {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
 }
 .depoimento {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 blockquote {
-    font-style: italic;
-    margin-left: 10px;
+  font-style: italic;
+  margin-left: 10px;
 }
 
 /* Estilo para a imagem de destaque da padaria */
 .imagem-destaque {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para dar destaque */
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para dar destaque */
 }
 
 /* Estilo para a imagem dos benefícios */
 .imagem-beneficios {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-    display: block; /* Para garantir que a imagem seja centralizada */
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: block; /* Para garantir que a imagem seja centralizada */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Estilo para as imagens dos depoimentos */
 .foto-depoente {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Torna a imagem redonda */
-    margin-right: 15px;
-    border: 2px solid #ddd; /* Borda sutil */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Torna a imagem redonda */
+  margin-right: 15px;
+  border: 2px solid #ddd; /* Borda sutil */
 }
 
 /* Estilo para os depoimentos */
 .depoimento {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 blockquote {
-    font-style: italic;
-    margin-left: 10px;
-    max-width: 600px;
+  font-style: italic;
+  margin-left: 10px;
+  max-width: 600px;
 }
-
-
 
 /* ESTILIZAÇÃO PAGINA DE LISTAGEM */
 /* Card de padaria */
 .card-padaria {
-    background-color: #ffffff;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-    transition: box-shadow 0.2s;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s;
 }
 
 .card-padaria:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card-padaria h2 {
-    margin: 0 0 0.5rem;
-    color: #333;
-    font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: #333;
+  font-size: 1.2rem;
 }
 
 .card-padaria p {
-    margin: 0.2rem 0;
-    color: #555;
-    font-size: 0.95rem;
+  margin: 0.2rem 0;
+  color: #555;
+  font-size: 0.95rem;
 }
 
 .card-padaria .ver-detalhes {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.6rem 1rem;
-    background-color: #3e2b1c;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #3e2b1c;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
 }
 
 .card-padaria .ver-detalhes:hover {
-    background-color: #2a1d13;
+  background-color: #2a1d13;
 }
 
 /* Paginação */
 #paginacao {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 0.5rem;
 }
 
 #paginacao button {
-    padding: 0.5rem 0.8rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #f2f2f2;
-    color: #333;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #f2f2f2;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  width: 200px;
 }
 
 #paginacao button:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 #paginacao button[style*="font-weight: bold"] {
-    background-color: #f4d58d;
-    font-weight: bold;
-    color: #333;
+  background-color: #f4d58d;
+  font-weight: bold;
+  color: #333;
 }
 
 input[type="text"] {
-    padding: 0.7rem 1rem;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border 0.3s;
+  padding: 0.7rem 1rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
 }
 
 input[type="text"]:focus {
-    border-color: #d77f52;
+  border-color: #d77f52;
 }
 
 .cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
 }
 
 .cookie-banner p {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 
 .cookie-banner a {
-    color: #ffd700;
-    text-decoration: underline;
+  color: #ffd700;
+  text-decoration: underline;
 }
 
 /* Centralizando o conteúdo dos botões */
 .cookie-banner div {
-    display: flex;
-    justify-content: center;
-    gap: 10px;  /* Adiciona um espaço entre os botões */
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adiciona um espaço entre os botões */
 }
 
 .cookie-banner button {
-    padding: 8px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    transition: background-color 0.3s ease;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .cookie-banner button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
+}
+
+/*ESTILIZAÇÃO DETALHES */
+#infoPadaria {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#infoPadaria h2 {
+  font-size: 28px;
+  color: #8b4513;
+  margin-bottom: 10px;
+}
+
+#infoPadaria p {
+  font-size: 18px;
+}
+
+#comentariosSection {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+#comentariosSection h2 {
+  margin-bottom: 15px;
+  color: #a0522d;
+}
+
+#comentariosList > div {
+  background-color: #fffaf0;
+  padding: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+#formComentario {
+  margin-top: 20px;
+}
+
+#formComentario textarea,
+#formComentario input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#formComentario button {
+  background-color: #cd853f;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#formComentario button:hover {
+  background-color: #a0522d;
+}
+
+.star-rating {
+  color: #f0c420;
+  font-size: 20px;
+  margin-bottom: 5px;
 }

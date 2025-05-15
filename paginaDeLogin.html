@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina de login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-</head>
+  </head>
+  <style>
+    .erro {
+      color: red;
+      font-size: 14px;
+      margin-top: 4px;
+      display: none;
+    }
 
-<body>
+    .input-group.invalid input {
+      border: 1px solid red;
+    }
+  </style>
+
+  <body>
     <header>
-        <h1>Guia das Padarias</h1>
-        <p>Descubra os melhores sabores da cidade</p>
+      <h1>Guia das Padarias</h1>
+      <p>Descubra os melhores sabores da cidade</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="listagem.html">Buscar padarias</a></li>
-            <li><a href="paginaDeLogin.html">Login</a></li>
-            <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
-            <li><a href="sobreNos.html">Sobre nós</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="listagem.html">Buscar padarias</a></li>
+        <li><a href="paginaDeLogin.html">Login</a></li>
+        <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+        <li><a href="cadastroDePadaria.html">Cadastrar Padaria</a></li>
+        <li><a href="sobreNos.html">Sobre nós</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
     </nav>
 
     <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <div class="input-group">
-                <label for="txtEmail">Email</label>
-                <input type="email" id="txtEmail" name="txtEmail" placeholder="Digite o seu email" required>
-            </div>
-            <div class="input-group">
-                <label for="txtSenha">Senha</label>
-                <input type="password" id="txtSenha" name="txtSenha" placeholder="Digite a sua senha" required>
-            </div>
-            <button type="button" onclick="acionarBotao()">Entrar</button>
-            <a href="paginaDeCadastro.html">Não tem conta? Cadastre já</a>
-        </form>
+      <h2>Login</h2>
+      <form>
+        <div class="input-group">
+          <label for="txtEmail">Email</label>
+          <input
+            type="email"
+            id="txtEmail"
+            name="txtEmail"
+            placeholder="Digite o seu email"
+            required
+          />
+          <small class="erro" id="erroEmail">Informe um email válido.</small>
+        </div>
+        <div class="input-group">
+          <label for="txtSenha">Senha</label>
+          <input
+            type="password"
+            id="txtSenha"
+            name="txtSenha"
+            placeholder="Digite a sua senha"
+            required
+          />
+          <small class="erro" id="erroSenha">Informe sua senha.</small>
+        </div>
+        <button type="button" onclick="acionarBotao()">Entrar</button>
+        <a href="paginaDeCadastro.html">Não tem conta? Cadastre já</a>
+      </form>
     </div>
-</body>
-
+  </body>
 </html>

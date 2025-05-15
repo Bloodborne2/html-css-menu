@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina de Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>Guia das Padarias</h1>
-        <p>Descubra os melhores sabores da cidade</p>
+      <h1>Guia das Padarias</h1>
+      <p>Descubra os melhores sabores da cidade</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="listagem.html">Buscar padarias</a></li>
-            <li><a href="paginaDeLogin.html">Login</a></li>
-            <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
-            <li><a href="sobreNos.html">Sobre nós</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="listagem.html">Buscar padarias</a></li>
+        <li><a href="paginaDeLogin.html">Login</a></li>
+        <li><a href="paginaDeCadastro.html">Cadastrar</a></li>
+        <li><a href="cadastroDePadaria.html">Cadastrar Padaria</a></li>
+        <li><a href="sobreNos.html">Sobre nós</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
     </nav>
 
     <div class="login-container">
-        <h2>Cadastro de usuário</h2>
-        <form>
-            <div class="input-group">
-                <label for="txtUsuario">Usuário</label>
-                <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Digite o seu usuário" required>
-            </div>
-            <div class="input-group">
-                <label for="cep">CEP</label>
-                <input type="text" id="cep" maxlength="9" onblur="buscarEnderecoPorCEP()" required>
+      <h2>Cadastro de usuário</h2>
+      <form>
+        <div class="input-group">
+          <label for="txtUsuario">Usuário</label>
+          <input
+            type="text"
+            id="txtUsuario"
+            name="txtUsuario"
+            placeholder="Digite o seu usuário"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="cep">CEP</label>
+          <input
+            type="text"
+            id="cep"
+            maxlength="9"
+            onblur="buscarEnderecoPorCEP()"
+            required
+            placeholder="Digite o seu CEP"
+          />
+        </div>
+        <div class="input-group">
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" readonly /><br /><br />
 
-            </div>
-            <div class="input-group">
-                <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" readonly><br><br>
+          <label for="bairro">Bairro:</label>
+          <input type="text" id="bairro" readonly /><br /><br />
 
-                <label for="bairro">Bairro:</label>
-                <input type="text" id="bairro" readonly><br><br>
-
-                <label for="numero">Numero:</label>
-                <input type="number" id="numero" required>
-            </div>
-            <div class="input-group">
-                <label for="txtEmail">Email</label>
-                <input type="email" id="txtEmail" name="txtEmail" placeholder="Digite o seu email" required>
-            </div>
-            <div class="input-group">
-                <label for="txtSenha">Senha</label>
-                <input type="password" id="txtSenha" name="txtSenha" placeholder="Digite a sua senha" required>
-            </div>
-            <button type="submit" onclick="acionarBotaoCadastro()">Cadastrar</button>
-            <a href="paginaDeLogin.html">Já tem uma conta? Entre aqui!</a>
-        </form>
+          <label for="numero">Numero:</label>
+          <input
+            type="number"
+            id="numero"
+            required
+            placeholder="Digite o número da sua casa"
+          />
+        </div>
+        <div class="input-group">
+          <label for="txtEmail">Email</label>
+          <input
+            type="email"
+            id="txtEmail"
+            name="txtEmail"
+            placeholder="Digite o seu email"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="txtSenha">Senha</label>
+          <input
+            type="password"
+            id="txtSenha"
+            name="txtSenha"
+            placeholder="Digite a sua senha"
+            required
+          />
+        </div>
+        <button type="submit" onclick="acionarBotaoCadastro()">
+          Cadastrar
+        </button>
+        <a href="paginaDeLogin.html">Já tem uma conta? Entre aqui!</a>
+      </form>
     </div>
-</body>
-
+  </body>
 </html>

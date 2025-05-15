@@ -1,40 +1,54 @@
 // VALIDAÇÃO DO FORM DE LOGIN USANDO LOCAL STORAGE
 function acionarBotao() {
-  var textEmail = document.getElementById("txtEmail").value.trim();
-  var textSenha = document.getElementById("txtSenha").value.trim();
+  const emailInput = document.getElementById("txtEmail");
+  const senhaInput = document.getElementById("txtSenha");
+  const email = emailInput.value.trim();
+  const senha = senhaInput.value.trim();
 
-  if (textEmail == "") {
-    alert("Preencha o campo email!");
-    return;
-  } else if (textSenha == "") {
-    alert("Preencha o campo senha!");
-    return;
+  let valido = true;
+
+  // Função auxiliar de validação visual
+  function validarCampo(campo, erroId, condicao) {
+    const erro = document.getElementById(erroId);
+    if (condicao) {
+      erro.style.display = "none";
+      campo.parentElement.classList.remove("invalid");
+    } else {
+      erro.style.display = "block";
+      campo.parentElement.classList.add("invalid");
+      valido = false;
+    }
   }
 
-  // Verifica se existem usuários cadastrados no localStorage
-  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  validarCampo(
+    emailInput,
+    "erroEmail",
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  );
+  validarCampo(senhaInput, "erroSenha", senha !== "");
 
-  // Verifica se o email e a senha existem nos usuários cadastrados
-  let usuarioEncontrado = usuarios.find(
-    (usuario) => usuario.email === textEmail && usuario.senha === textSenha
+  if (!valido) return;
+
+  // Verifica se existem usuários cadastrados no localStorage
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const usuarioEncontrado = usuarios.find(
+    (usuario) => usuario.email === email && usuario.senha === senha
   );
 
   if (usuarioEncontrado) {
-    let desejaCadastrar = confirm(
-      "Login bem-sucedido! Deseja cadastrar uma padaria?"
-    );
-    if (desejaCadastrar) {
-      window.location.href = "cadastroDePadaria.html";
-    } else {
-      window.location.href = "index.html";
-      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
-    }
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+    alert("Login realizado com sucesso!");
+    window.location.href = "index.html";
   } else {
-    alert("Email ou senha incorretos!");
+    validarCampo(emailInput, "erroEmail", false);
+    validarCampo(senhaInput, "erroSenha", false);
+    document.getElementById("erroSenha").textContent =
+      "Email ou senha incorretos.";
   }
 }
 
-// VALIDAÇÃO DO FORM DE CADASTRO E LOCAL STORAGE
+// VALIDAÇÃO DO FORM DE CADASTRO DE USUARIO E LOCAL STORAGE
 function acionarBotaoCadastro() {
   document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault(); // Impede envio do form até passar na validação
@@ -260,4 +274,135 @@ document.addEventListener("DOMContentLoaded", function () {
         banner.style.display = "none";
       });
   }
+});
+
+// CADASTRO DE PADARIAS
+document.addEventListener("DOMContentLoaded", () => {
+  const formCadastro = document.getElementById("formCadastro");
+  const padarias = JSON.parse(localStorage.getItem("padarias")) || [];
+
+  formCadastro.addEventListener("submit", (event) => {
+    event.preventDefault(); // Impede o envio padrão
+
+    // Pegando os valores dos campos
+    const nomePadaria = document.getElementById("nomePadaria").value;
+    const diferencial = document.getElementById("diferencial").value;
+    const descCardapio = document.getElementById("descCardapio").value;
+    const imagemUrl = document.getElementById("fotoUrl").value;
+    const endereco = document.getElementById("endereco").value;
+    const horario = document.getElementById("horario").value;
+    const telefone = document.getElementById("telefone").value;
+    const site = document.getElementById("site").value;
+
+    // Criando o objeto da padaria
+    const novaPadaria = {
+      id: padarias.length + 1,
+      nome: nomePadaria,
+      diferencial: diferencial,
+      descricao: descCardapio || "Descrição não informada.",
+      imagem:
+        imagemUrl || "https://via.placeholder.com/300x200?text=Sem+imagem",
+      endereco: endereco,
+      horario: horario,
+      telefone: telefone,
+      site: site || "",
+      cardapio: descCardapio || "Cardápio não informado",
+    };
+
+    // Salvando no localStorage
+    padarias.push(novaPadaria);
+    localStorage.setItem("padarias", JSON.stringify(padarias));
+
+    alert("Padaria cadastrada com sucesso!");
+    formCadastro.reset();
+  });
+
+  // Habilita o botão de envio mesmo sem validação
+  document.getElementById("submitBtn").disabled = false;
+});
+
+// VALIDAÇÃO DO FORM DE CADASTRO DE PADARIAS
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("formCadastro");
+  const submitBtn = document.getElementById("submitBtn");
+
+  const camposObrigatorios = [
+    {
+      id: "nomePadaria",
+      regex: /.+/,
+      erroId: "nomePadariaError",
+      msg: "Informe o nome da padaria.",
+    },
+    {
+      id: "diferencial",
+      regex: /.+/,
+      erroId: "diferencialError",
+      msg: "Informe o diferencial da empresa.",
+    },
+    { id: "fotoUrl", regex: /^https?:\/\/.+\..+/, erroId: null, msg: null },
+    {
+      id: "endereco",
+      regex: /.+/,
+      erroId: "enderecoError",
+      msg: "Informe o endereço completo.",
+    },
+    {
+      id: "horario",
+      regex: /.+/,
+      erroId: "horarioError",
+      msg: "Informe o horário de funcionamento.",
+    },
+    {
+      id: "telefone",
+      regex: /^\(?\d{2}\)?\s?\d{4,5}-\d{4}$/,
+      erroId: "telefoneError",
+      msg: "Informe um telefone válido. Ex: (11) 1234-5678",
+    },
+  ];
+
+  function validarCampo(campo, regex, erroId, msg) {
+    const valor = campo.value.trim();
+    const valido = regex.test(valor);
+
+    if (erroId) {
+      const erroDiv = document.getElementById(erroId);
+      if (!valido) {
+        erroDiv.textContent = msg;
+        erroDiv.style.display = "block";
+        campo.classList.add("invalido");
+      } else {
+        erroDiv.textContent = "";
+        erroDiv.style.display = "none";
+        campo.classList.remove("invalido");
+      }
+    }
+
+    return valido;
+  }
+
+  function validarFormulario() {
+    let valido = true;
+    camposObrigatorios.forEach((c) => {
+      const campo = document.getElementById(c.id);
+      const estaValido = validarCampo(campo, c.regex, c.erroId, c.msg);
+      if (!estaValido) valido = false;
+    });
+    submitBtn.disabled = !valido;
+  }
+
+  camposObrigatorios.forEach((campo) => {
+    const input = document.getElementById(campo.id);
+    input.addEventListener("input", validarFormulario);
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    validarFormulario();
+
+    if (!submitBtn.disabled) {
+      alert("Padaria cadastrada com sucesso!");
+      form.reset();
+      submitBtn.disabled = true;
+    }
+  });
 });
