@@ -7,8 +7,8 @@
 -🛠️ Correção dos IDs dos elementos de erro no formulário de cadastro e login (de erroEmail/erroSenha para emailError/senhaError) para exibição correta das mensagens de validação.
 -🛠️ Inclusão da chamada da função acionarBotaoCadastro() no evento DOMContentLoaded para garantir a validação e o controle do formulário de cadastro.
 -🔄 Ajustes no fluxo de validação e exibição de mensagens de erro no login e cadastro, melhorando a experiência do usuário.
-🧹 Refatoração do JavaScript para melhor organização e manutenção do código de validação.
-✅ Garantia de que as mensagens de erro apareçam corretamente nos formulários de login e cadastro.
+-🧹 Refatoração do JavaScript para melhor organização e manutenção do código de validação.
+-✅ Garantia de que as mensagens de erro apareçam corretamente nos formulários de login e cadastro.
 ---
 - v1.0.3 - (10/05/2025)
   - 🎨 Criação de novos HTMLs pagina de contato, listagem e detalhes
