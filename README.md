@@ -1,6 +1,6 @@
 # 📌 Versions / Releases
 
-###v1.0.4 - (14/05/2025)
+### v1.0.4 - (14/05/2025)
   -🔄 Adicionados novos campos no cadastro de padaria
   -🛠️ Criação de padaria fixas para aparecer na pagina de listagem
   -🛠️ Correção do cadastro de padaria, agora a padaria cadastrada aparece na pagina de listagem
