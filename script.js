@@ -406,3 +406,54 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// TROCAR A SENHA
+function recuperarSenha() {
+  const email = document.getElementById("emailRecuperar").value.trim();
+  const novaSenha = document.getElementById("novaSenha").value.trim();
+  const mensagem = document.getElementById("mensagemRecuperar");
+
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  const index = usuarios.findIndex((user) => user.email === email);
+
+  if (index === -1) {
+    mensagem.textContent = "Email não encontrado.";
+    mensagem.classList.remove("sucesso");
+    mensagem.classList.add("erro");
+    return;
+  }
+
+  const senhaAntiga = usuarios[index].senha;
+
+  if (novaSenha === "") {
+    mensagem.textContent = "A nova senha não pode estar vazia.";
+    mensagem.classList.remove("sucesso");
+    mensagem.classList.add("erro");
+    return;
+  }
+
+  if (novaSenha.length < 6) {
+    mensagem.textContent = "A senha deve conter no mínimo 6 caracteres.";
+    mensagem.classList.remove("sucesso");
+    mensagem.classList.add("erro");
+    return;
+  }
+
+  if (novaSenha === senhaAntiga) {
+    mensagem.textContent = "A nova senha deve ser diferente da senha atual.";
+    mensagem.classList.remove("sucesso");
+    mensagem.classList.add("erro");
+    return;
+  }
+
+  usuarios[index].senha = novaSenha;
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  mensagem.textContent = "Senha redefinida com sucesso!";
+  mensagem.classList.remove("erro");
+  mensagem.classList.add("sucesso");
+
+  setTimeout(() => {
+    window.location.href = "paginaDeLogin.html";
+  }, 2000);
+}

@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina de login</title>
+    <title>Recuperar senha</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
   <style>
-    .erro {
-      color: red;
+    .mensagem {
+      margin-top: 10px;
       font-size: 14px;
-      margin-top: 4px;
-      display: none;
+      color: red;
     }
 
-    .input-group.invalid input {
-      border: 1px solid red;
+    .mensagem.sucesso {
+      color: green;
     }
   </style>
 
@@ -38,33 +37,34 @@
     </nav>
 
     <div class="login-container">
-      <h2>Login</h2>
+      <h2>Recuperar Senha</h2>
       <form>
         <div class="input-group">
-          <label for="txtEmail">Email</label>
+          <label for="emailRecuperar">Email cadastrado <span>*</span></label>
           <input
             type="email"
-            id="txtEmail"
-            name="txtEmail"
-            placeholder="Digite o seu email"
+            id="emailRecuperar"
             required
+            placeholder="Digite seu email"
           />
-          <small class="erro" id="erroEmail">Informe um email válido.</small>
         </div>
+
         <div class="input-group">
-          <label for="txtSenha">Senha</label>
+          <label for="novaSenha">Nova senha <span>*</span></label>
           <input
             type="password"
-            id="txtSenha"
-            name="txtSenha"
-            placeholder="Digite a sua senha"
+            id="novaSenha"
             required
+            placeholder="Digite a nova senha"
           />
-          <small class="erro" id="erroSenha">Informe sua senha.</small>
         </div>
-        <button type="button" onclick="acionarBotao()">Entrar</button>
-        <a href="paginaDeCadastro.html">Não tem conta? Cadastre já</a><br />
-        <a href="recuperarSenha.html">Esqueceu a senha?</a>
+
+        <p id="mensagemRecuperar" class="mensagem"></p>
+
+        <button type="button" onclick="recuperarSenha()">
+          Redefinir senha
+        </button>
+        <a href="paginaDeLogin.html">Voltar ao login</a>
       </form>
     </div>
   </body>
