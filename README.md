@@ -43,85 +43,91 @@
 
 A **Página de Divulgação de Padaria** é uma plataforma voltada para conectar microempreendedores do ramo de panificação com clientes em potencial. O site oferece funcionalidades para cadastro de usuários, listagem de padarias, avaliações de clientes e muito mais.
 
+---
+
 ## 🔑 Funcionalidades
 
-- **Cadastro de Usuários**: Os novos usuários podem criar uma conta fornecendo nome, e-mail e senha. Usuários cadastrados podem acessar suas contas através da página de login.
-  
-- **Página Inicial**: Exibição das principais funcionalidades do site, como:
-  - Listagem de padarias cadastradas
-  - Avaliações de clientes
-  - Novidades do setor de panificação
-
-- **Página "Sobre Nós"**: Informações sobre a origem da ideia da plataforma, com imagens e textos explicativos.
-
+- **Cadastro de Usuários**: Os novos usuários podem criar uma conta. Usuários cadastrados podem acessar suas contas através da página de login.
+- **Página Inicial**: Apresentação do site
+- **Cookies**
+- **Página "Sobre Nós"**: Missão, visão e valores da empresa.
 - **Página de Contato**: Informações de localização e número de telefone para suporte ou dúvidas.
+- **Exibição de Padarias**
+- **Avaliação e Comentário de Usuários**
+- **Busca de Padarias**
 
 ---
 
 ## 📝 Cadastro de Usuários e Login
 
 ### Cadastro de Usuário (Campos obrigatórios):
-- **Nome**: Obrigatório
-- **E-mail**: Obrigatório
-- **Senha**: Obrigatório
+
+- **Nome**
+- **E-mail**
+- **Senha**
+- **CEP**
+- **Endereço**
+- **Bairro**
 
 ### Login (Campos obrigatórios):
-- **E-mail**: Obrigatório
-- **Senha**: Obrigatório
+
+- **E-mail**
+- **Senha**
 
 ---
 
 ## 🏠 Página Inicial
 
-A página inicial apresentará as principais funcionalidades do site, incluindo:
-- Listagem das padarias cadastradas
-- Avaliações de clientes
-- Destaques do setor
+A página inicial apresentará a ideia geral do site e comentários de usuários, além de exibir o clima atual da cidade de São Paulo.
 
 ---
 
 ## ℹ️ Página "Sobre Nós"
 
-- Explicação sobre a origem da ideia/empresa
-- Informações relevantes sobre a proposta da plataforma
-- Apresentação apenas com imagens e textos
+- Missão
+- Visão
+- Valores da empresa
 
 ---
 
 ## 📞 Página de Contato
 
-- Localização da empresa
+- Localização da empresa  
 - Número de telefone para suporte ou dúvidas
 
 ---
 
-## 🍞 Cadastro de Padaria (após login)
+## 🍞 Cadastro de Padaria
 
-Após o login, os usuários poderão cadastrar suas padarias. O formulário de cadastro incluirá:
+Usuários poderão cadastrar suas padarias sem a necessidade de estar logado. O formulário de cadastro incluirá:
 
-- **Nome da Padaria**: Obrigatório
-- **Diferencial da Empresa** (Ex: Produtos artesanais, ingredientes orgânicos, etc.): Obrigatório
-- **Descrição do Cardápio**: Opcional
-- **Upload de Imagens**:
-  - Foto do estabelecimento: Obrigatório
-- **Localização**:
-  - Endereço completo (sem integração com mapas): Obrigatório
+- **Nome da Padaria** (Obrigatório)
+- **Diferencial da Empresa** (Ex: Produtos artesanais, ingredientes orgânicos) (Obrigatório)
+- **Descrição do Cardápio** (Opcional)
+- **Site** (Opcional)
+- **Horário de Funcionamento** (Obrigatório)
+- **Telefone** (Obrigatório)
+- **Upload de Imagens** (Apenas URL de imagens)  
+  - Foto do estabelecimento (Obrigatório)
+- **Localização**: Endereço completo (sem integração com mapas) (Obrigatório)
 
 ---
 
 ## 📋 Exibição dos Anúncios
 
 ### Página de Listagem:
-- Exibe todas as padarias cadastradas com informações resumidas, como nome e diferencial.
+
+- Exibe todas as padarias cadastradas com informações resumidas (nome e diferencial)
 
 ### Página de Detalhes:
-- Exibe informações completas da padaria ao clicar em um anúncio.
+
+- Exibe informações completas da padaria ao clicar em um anúncio
 
 ---
 
 ## 🔍 Busca
 
-Funcionalidade para buscar padarias pelo nome.
+- Funcionalidade para buscar padarias pelo nome
 
 ---
 
@@ -129,11 +135,4 @@ Funcionalidade para buscar padarias pelo nome.
 
 - **Sistema de Avaliação**: Clientes podem deixar notas para as padarias (Obrigatório)
 - **Comentários**: Usuários podem compartilhar suas experiências (Opcional)
-
----
-
-## 🔐 Segurança e Privacidade
-
-- **Proteção de Dados**: Implementação de medidas para garantir a privacidade dos usuários.
-- **Perguntas Anônimas**: Permitir que usuários enviem dúvidas sem se identificar.
 
