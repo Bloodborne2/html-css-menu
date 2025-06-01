@@ -457,3 +457,32 @@ function recuperarSenha() {
     window.location.href = "paginaDeLogin.html";
   }, 2000);
 }
+
+// Carrega dados do usuário logado na página de perfil
+function carregarPerfil() {
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (!usuarioLogado) {
+    alert("Você precisa estar logado para acessar o perfil.");
+    window.location.href = "index.html";
+    return;
+  }
+
+  document.getElementById("logoutBtn").style.display = "inline";
+
+  const perfilDiv = document.getElementById("perfilDados");
+  perfilDiv.innerHTML = `
+    <p><strong>Usuário:</strong> ${usuarioLogado.usuario}</p>
+    <p><strong>Email:</strong> ${usuarioLogado.email}</p>
+    <p><strong>Endereço:</strong> ${usuarioLogado.endereco}, Nº ${usuarioLogado.numero}</p>
+    <p><strong>Bairro:</strong> ${usuarioLogado.bairro}</p>
+    <p><strong>CEP:</strong> ${usuarioLogado.cep}</p>
+  `;
+}
+
+// Logout
+function logout() {
+  localStorage.removeItem("usuarioLogado");
+  alert("Você foi desconectado.");
+  window.location.href = "index.html";
+}

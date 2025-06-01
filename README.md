@@ -1,16 +1,17 @@
 # 📌 Versions / Releases
-
-- v1.0.4 - (14/05/2025)
-  -🔄 Adicionados novos campos no cadastro de padaria
-  -🛠️ Criação de padaria fixas para aparecer na pagina de listagem
-  -🛠️ Correção do cadastro de padaria, agora a padaria cadastrada aparece na pagina de listagem
-  -🛠️ Correção dos IDs dos elementos de erro no formulário de cadastro e login (de erroEmail/erroSenha para emailError/senhaError) para exibição correta das mensagens de validação.
-  -🛠️ Inclusão da chamada da função acionarBotaoCadastro() no evento DOMContentLoaded para garantir a validação e o controle do formulário de cadastro.
-  -🔄 Ajustes no fluxo de validação e exibição de mensagens de erro no login e cadastro, melhorando a experiência do usuário.
-  -🧹 Refatoração do JavaScript para melhor organização e manutenção do código de validação.
-  -✅ Garantia de que as mensagens de erro apareçam corretamente nos formulários de login e cadastro.
+- v1.0.5 - (31/05/2025)
+  - 🛠️ Criação da pagina de perfil
 ---
-- v1.0.3 - (10/05/2025)
+- **v1.0.2** - (14/05/2025)
+  - 🔄 Adicionados novos campos no cadastro de padaria
+  - 🛠️ Criação de padaria fixas para aparecer na pagina de listagem
+  - 🛠️ Correção do cadastro de padaria, agora a padaria cadastrada aparece na pagina de listagem
+  - 🛠️ Inclusão da chamada da função acionarBotaoCadastro() no evento DOMContentLoaded para garantir a validação e o controle do formulário de cadastro.
+  - 🔄 Ajustes no fluxo de validação e exibição de mensagens de erro no login e cadastro, melhorando a experiência do usuário.
+  - 🧹 Refatoração do JavaScript para melhor organização e manutenção do código de validação.
+  - ✅ Garantia de que as mensagens de erro apareçam corretamente nos formulários de login e cadastro.
+---
+- **v1.0.2** - (10/05/2025)
   - 🎨 Criação de novos HTMLs pagina de contato, listagem e detalhes
   - 🎨 Criação de header e footer para todas as páginas
   - 🛠️ Ajustes no JavaScript para exibição dinâmica do banner de cookies em todas as páginas
